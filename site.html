@@ -133,7 +133,6 @@
       grid-template-columns: repeat(2, 1fr);
       gap: 1.5rem;
       align-items: start;
-      max-width: 1200px;
     }
 
     @media screen and (max-width: 768px) {
@@ -361,7 +360,7 @@
       .container {
         margin-left: 3rem;
         margin-right: 3rem;
-        max-width: min(calc(100% - 6rem), 900px);
+        max-width: calc(100% - 6rem);
       }
     }
 
@@ -369,7 +368,7 @@
       .container {
         margin-left: 4rem;
         margin-right: 4rem;
-        max-width: min(calc(100% - 8rem), 900px);
+        max-width: calc(100% - 8rem);
       }
     }
 
@@ -382,11 +381,6 @@
     /* Typography improvements */
     p {
       margin-bottom: 0.75rem;
-    }
-
-    /* Constrain text content width */
-    .content-wrapper {
-      max-width: 700px;
     }
 
     /* Image improvements */
@@ -645,7 +639,7 @@
                   <div id="abstract4" class="content is-hidden abstract-text">
                     <p>
                       <br>
-                      Stigmatizing language in medical notes can prevent a patient from acquiring proper treatment. Reading medical notes containing biased language can influence subsequent clinicians' perception of a patient, further compounding a patient's inability to receive adequate care. Thus, there is a clear need to correct patient notes to eliminate stigmatizing language. Prior work involving stigmatizing language in medical notes has largely remained qualitative where clinicians and researchers manually analyzed notes for stigmatizing keywords. Our work utilized a computational approach to obtain a more robust set of stigmatizing keywords. We created contextual word embeddings from BERT-based and BioBERT-based models that are trained on free-text patient-oriented clinical data. These state-of-the-art models allowed us to develop word vector representations, from which we identified 30 new stigmatizing keywords. We then complete a thorough analysis to build a grammar structure that categorizes stigmatizing keywords according to the ways they induce stigma and better understand the syntactical environments in which these keywords occur. Following our analysis, we developed a model called MedStiLE (Medical note Stigmatizing Language Editor) that utilizes the grammar structure and constituency parsing to edit notes containing the stigmatizing keywords to be non-stigmatizing. We conducted an evaluation to test the efficacy of MedStiLE using human raters and found that it significantly reduced stigma in notes. This research provides various novel insights in terms of methodology and results that can help shape future works involving the intersection of language and healthcare.
+                      Stigmatizing language in medical notes can prevent a patient from acquiring proper treatment. Reading medical notes containing biased language can influence subsequent clinicians’ perception of a patient, further compounding a patient’s inability to receive adequate care. Thus, there is a clear need to correct patient notes to eliminate stigmatizing language. Prior work involving stigmatizing language in medical notes has largely remained qualitative where clinicians and researchers manually analyzed notes for stigmatizing keywords. Our work utilized a computational approach to obtain a more robust set of stigmatizing keywords. We created contextual word embeddings from BERT-based and BioBERT-based models that are trained on free-text patient-oriented clinical data. These state-of-the-art models allowed us to develop word vector representations, from which we identified 30 new stigmatizing keywords. We then complete a thorough analysis to build a grammar structure that categorizes stigmatizing keywords according to the ways they induce stigma and better understand the syntactical environments in which these keywords occur. Following our analysis, we developed a model called MedStiLE (Medical note Stigmatizing Language Editor) that utilizes the grammar structure and constituency parsing to edit notes containing the stigmatizing keywords to be non-stigmatizing. We conducted an evaluation to test the efficacy of MedStiLE using human raters and found that it significantly reduced stigma in notes. This research provides various novel insights in terms of methodology and results that can help shape future works involving the intersection of language and healthcare.
                   </div>
                 </li>
               </ul>
@@ -697,4 +691,4 @@
     });
   </script>
 </body>
-</html>
+</html> 
