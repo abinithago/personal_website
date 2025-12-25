@@ -512,6 +512,21 @@
 
     .abstract-text {
       font-style: italic;
+      font-size: 0.9rem;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease-in-out, padding-top 0.5s ease-in-out, margin-top 0.5s ease-in-out, border-top-width 0.5s ease-in-out;
+      padding: 0;
+      margin: 0;
+      width: 100%;
+      border-top: 0 solid rgba(15, 58, 67, 0.1);
+    }
+
+    .abstract-text:not(.is-hidden) {
+      max-height: 2000px;
+      padding-top: 1rem;
+      margin-top: 1rem;
+      border-top-width: 1px;
     }
 
     .pub-list {
@@ -879,16 +894,14 @@
                   [<a href="https://medperturb.csail.mit.edu/" target="_blank">Website</a>]
                   [<a href="https://arxiv.org/abs/2506.17163" target="_blank">Paper</a>]
                   [<a href="https://github.com/abinithago/MedPerturb" target="_blank">Code</a>]
-
-                  <div id="abstract1" class="content is-hidden abstract-text">
-                    <p>
-                      <br>
-                      Clinical robustness is critical to the safe deployment of medical Large Language Models (LLMs), but key questions remain about how LLMs and humans may differ in response to the real-world variability typified by clinical settings. To address this, we introduce MedPerturb, a dataset designed to systematically evaluate medical LLMs under controlled perturbations of clinical input. MedPerturb consists of clinical vignettes spanning a range of pathologies, each transformed along three axes: (1) gender modifications (e.g., gender-swapping or gender-removal); (2) style variation (e.g., uncertain phrasing or colloquial tone); and (3) format changes (e.g., LLM-generated multi-turn conversations or summaries). With MedPerturb, we release a dataset of 800 clinical contexts grounded in realistic input variability, outputs from four LLMs, and three human expert reads per clinical context. We use MedPerturb in two case studies to reveal how shifts in gender identity cues, language style, or format reflect diverging treatment selections between humans and LLMs. We find that LLMs are more sensitive to gender and style perturbations while human annotators are more sensitive to LLM-generated format perturbations such as clinical summaries. Our results highlight the need for evaluation frameworks that go beyond static benchmarks to assess the similarity between human clinician and LLM decisions under the variability characteristic of clinical settings.
-                    </p>
-                  </div>
                 </li>
                   </ul>
                 </div>
+              </div>
+              <div id="abstract1" class="content abstract-text is-hidden">
+                <p>
+                  Clinical robustness is critical to the safe deployment of medical Large Language Models (LLMs), but key questions remain about how LLMs and humans may differ in response to the real-world variability typified by clinical settings. To address this, we introduce MedPerturb, a dataset designed to systematically evaluate medical LLMs under controlled perturbations of clinical input. MedPerturb consists of clinical vignettes spanning a range of pathologies, each transformed along three axes: (1) gender modifications (e.g., gender-swapping or gender-removal); (2) style variation (e.g., uncertain phrasing or colloquial tone); and (3) format changes (e.g., LLM-generated multi-turn conversations or summaries). With MedPerturb, we release a dataset of 800 clinical contexts grounded in realistic input variability, outputs from four LLMs, and three human expert reads per clinical context. We use MedPerturb in two case studies to reveal how shifts in gender identity cues, language style, or format reflect diverging treatment selections between humans and LLMs. We find that LLMs are more sensitive to gender and style perturbations while human annotators are more sensitive to LLM-generated format perturbations such as clinical summaries. Our results highlight the need for evaluation frameworks that go beyond static benchmarks to assess the similarity between human clinician and LLM decisions under the variability characteristic of clinical settings.
+                </p>
               </div>
             </div>
           </div>
@@ -910,16 +923,14 @@
                   [<a href="#" class="abstract-toggle" data-target="abstract2">Abstract</a>]
                   [<a href="https://dl.acm.org/doi/10.1145/3715275.3732121" target="_blank">Paper</a>]
                   [<a href="https://github.com/abinithago/medium-is-message" target="_blank">Code</a>]
-
-                  <div id="abstract2" class="content is-hidden abstract-text">
-                    <p>
-                      <br>
-                      The integration of large language models (LLMs) into clinical diagnostics necessitates a careful understanding of how clinically irrelevant aspects of user inputs directly influence generated treatment recommendations and, consequently, clinical outcomes for end-users. Building on prior research that examines the impact of demographic attributes on clinical LLM reasoning, this study explores how non-clinically relevant attributes shape clinical decision-making by LLMs. Through the perturbation of patient messages, we evaluate whether LLM behavior remains consistent, accurate, and unbiased when non-clinical information is altered. These perturbations assess the brittleness of clinical LLM reasoning by replicating structural errors that may occur during electronic data processing patient questions and simulating interactions between patient-AI systems in diverse, vulnerable patient groups. Our findings reveal notable inconsistencies in LLM treatment recommendations and significant degradation of clinical accuracy in ways that reduce care allocation to patients. Additionally, there are significant disparities in treatment recommendations between gender subgroups as well as between model-inferred gender subgroups. We also apply our perturbation framework to a conversational clinical dataset to find that even in conversation, LLM clinical accuracy decreases post-perturbation, and disparities exist in how perturbations impact gender subgroups. By analyzing LLM outputs in response to realistic yet modified clinical contexts, our work deepens understanding of the sensitivity, inaccuracy, and biases inherent in medical LLMs, offering critical insights for the deployment of patient-AI systems. 
-                    </p>
-                  </div>
                 </li>
                   </ul>
                 </div>
+              </div>
+              <div id="abstract2" class="content abstract-text is-hidden">
+                <p>
+                  The integration of large language models (LLMs) into clinical diagnostics necessitates a careful understanding of how clinically irrelevant aspects of user inputs directly influence generated treatment recommendations and, consequently, clinical outcomes for end-users. Building on prior research that examines the impact of demographic attributes on clinical LLM reasoning, this study explores how non-clinically relevant attributes shape clinical decision-making by LLMs. Through the perturbation of patient messages, we evaluate whether LLM behavior remains consistent, accurate, and unbiased when non-clinical information is altered. These perturbations assess the brittleness of clinical LLM reasoning by replicating structural errors that may occur during electronic data processing patient questions and simulating interactions between patient-AI systems in diverse, vulnerable patient groups. Our findings reveal notable inconsistencies in LLM treatment recommendations and significant degradation of clinical accuracy in ways that reduce care allocation to patients. Additionally, there are significant disparities in treatment recommendations between gender subgroups as well as between model-inferred gender subgroups. We also apply our perturbation framework to a conversational clinical dataset to find that even in conversation, LLM clinical accuracy decreases post-perturbation, and disparities exist in how perturbations impact gender subgroups. By analyzing LLM outputs in response to realistic yet modified clinical contexts, our work deepens understanding of the sensitivity, inaccuracy, and biases inherent in medical LLMs, offering critical insights for the deployment of patient-AI systems. 
+                </p>
               </div>
             </div>
           </div>
@@ -940,12 +951,14 @@
                   [<a href="#" class="abstract-toggle" data-target="abstract3">Abstract</a>]
                   [<a href="https://ieeexplore.ieee.org/abstract/document/10146322" target="_blank">Paper</a>]
                   [<a href="https://github.com/zhywan/covid19-privacy-game" target="_blank">Code</a>]
-                  <div id="abstract3" class="content is-hidden abstract-text">
-                    <p>
-                      <br>
-                      Sharing individual-level pandemic data is essential for accelerating the understanding of a disease. For example, COVID-19 data have been widely collected to support public health surveillance and research. In the United States, these data are typically de-identified before publication to protect the privacy of the corresponding individuals. However, current data publishing approaches for this type of data, such as those adopted by the U.S. Centers for Disease Control and Prevention (CDC), have not flexed over time to account for the dynamic nature of infection rates. Thus, the policies generated by these strategies have the potential to both raise privacy risks or overprotect the data and impair the data utility (or usability). To optimize the tradeoff between privacy risk and data utility, we introduce a game theoretic model that adaptively generates policies for the publication of individual-level COVID-19 data according to infection dynamics. We model the data publishing process as a two-player Stackelberg game between a data publisher and a data recipient and then search for the best strategy for the publisher. In this game, we consider 1) average performance of predicting future case counts; and 2) mutual information between the original data and the released data. We use COVID-19 case data from Vanderbilt University Medical Center from March 2020 to December 2021 to demonstrate the effectiveness of the new model. The results indicate that the game theoretic model outperforms all state-of-the-art baseline approaches, including those adopted by CDC, while maintaining low privacy risk. We further perform an extensive sensitivity analyses to show that our findings are robust to order-of-magnitude parameter fluctuations.</div>
+                </li>
                   </ul>
                 </div>
+              </div>
+              <div id="abstract3" class="content abstract-text is-hidden">
+                <p>
+                  Sharing individual-level pandemic data is essential for accelerating the understanding of a disease. For example, COVID-19 data have been widely collected to support public health surveillance and research. In the United States, these data are typically de-identified before publication to protect the privacy of the corresponding individuals. However, current data publishing approaches for this type of data, such as those adopted by the U.S. Centers for Disease Control and Prevention (CDC), have not flexed over time to account for the dynamic nature of infection rates. Thus, the policies generated by these strategies have the potential to both raise privacy risks or overprotect the data and impair the data utility (or usability). To optimize the tradeoff between privacy risk and data utility, we introduce a game theoretic model that adaptively generates policies for the publication of individual-level COVID-19 data according to infection dynamics. We model the data publishing process as a two-player Stackelberg game between a data publisher and a data recipient and then search for the best strategy for the publisher. In this game, we consider 1) average performance of predicting future case counts; and 2) mutual information between the original data and the released data. We use COVID-19 case data from Vanderbilt University Medical Center from March 2020 to December 2021 to demonstrate the effectiveness of the new model. The results indicate that the game theoretic model outperforms all state-of-the-art baseline approaches, including those adopted by CDC, while maintaining low privacy risk. We further perform an extensive sensitivity analyses to show that our findings are robust to order-of-magnitude parameter fluctuations.
+                </p>
               </div>
             </div>
           </div>
@@ -966,15 +979,14 @@
                   <strong>Abinitha Gourabathina</strong> (Senior thesis, Princeton University). Princeton DataSpace. http://arks.princeton.edu/ark:/88435/dsp01cv43p110t <br>
                   [<a href="#" class="abstract-toggle" data-target="abstract4">Abstract</a>]
                   [<a href="assets/files/senior_thesis.pdf" target="_blank">Paper</a>]
-                  <div id="abstract4" class="content is-hidden abstract-text">
-                    <p>
-                      <br>
-                      Stigmatizing language in medical notes can prevent a patient from acquiring proper treatment. Reading medical notes containing biased language can influence subsequent clinicians' perception of a patient, further compounding a patient's inability to receive adequate care. Thus, there is a clear need to correct patient notes to eliminate stigmatizing language. Prior work involving stigmatizing language in medical notes has largely remained qualitative where clinicians and researchers manually analyzed notes for stigmatizing keywords. Our work utilized a computational approach to obtain a more robust set of stigmatizing keywords. We created contextual word embeddings from BERT-based and BioBERT-based models that are trained on free-text patient-oriented clinical data. These state-of-the-art models allowed us to develop word vector representations, from which we identified 30 new stigmatizing keywords. We then complete a thorough analysis to build a grammar structure that categorizes stigmatizing keywords according to the ways they induce stigma and better understand the syntactical environments in which these keywords occur. Following our analysis, we developed a model called MedStiLE (Medical note Stigmatizing Language Editor) that utilizes the grammar structure and constituency parsing to edit notes containing the stigmatizing keywords to be non-stigmatizing. We conducted an evaluation to test the efficacy of MedStiLE using human raters and found that it significantly reduced stigma in notes. This research provides various novel insights in terms of methodology and results that can help shape future works involving the intersection of language and healthcare.
-                    </p>
-                  </div>
                 </li>
                   </ul>
                 </div>
+              </div>
+              <div id="abstract4" class="content abstract-text is-hidden">
+                <p>
+                  Stigmatizing language in medical notes can prevent a patient from acquiring proper treatment. Reading medical notes containing biased language can influence subsequent clinicians' perception of a patient, further compounding a patient's inability to receive adequate care. Thus, there is a clear need to correct patient notes to eliminate stigmatizing language. Prior work involving stigmatizing language in medical notes has largely remained qualitative where clinicians and researchers manually analyzed notes for stigmatizing keywords. Our work utilized a computational approach to obtain a more robust set of stigmatizing keywords. We created contextual word embeddings from BERT-based and BioBERT-based models that are trained on free-text patient-oriented clinical data. These state-of-the-art models allowed us to develop word vector representations, from which we identified 30 new stigmatizing keywords. We then complete a thorough analysis to build a grammar structure that categorizes stigmatizing keywords according to the ways they induce stigma and better understand the syntactical environments in which these keywords occur. Following our analysis, we developed a model called MedStiLE (Medical note Stigmatizing Language Editor) that utilizes the grammar structure and constituency parsing to edit notes containing the stigmatizing keywords to be non-stigmatizing. We conducted an evaluation to test the efficacy of MedStiLE using human raters and found that it significantly reduced stigma in notes. This research provides various novel insights in terms of methodology and results that can help shape future works involving the intersection of language and healthcare.
+                </p>
               </div>
             </div>
           </div>
